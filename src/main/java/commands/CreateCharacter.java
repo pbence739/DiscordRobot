@@ -31,18 +31,18 @@ public class CreateCharacter extends ListenerAdapter {
 
                 int maxRoll = rolls[0];
                 int rollsSum = 0;
-                for (int i = 0; i < rolls.length; i++) {
-                    if (rolls[i] > maxRoll) {
-                        maxRoll = rolls[i];
+                for (int roll : rolls) {
+                    if (roll > maxRoll) {
+                        maxRoll = roll;
                     }
-                    rollsSum += rolls[i];
+                    rollsSum += roll;
                 }
                 attributeScores[j] = rollsSum - maxRoll;
             }
 
             String results = "";
             for (int i = 0; i < attributes.length; i++){
-                results+= attributes[i] + ": " + attributeScores[i] + "\n";
+                results += attributes[i] + ": " + attributeScores[i] + "\n";
             }
 
             embed.addField("Scores: ", results, false);

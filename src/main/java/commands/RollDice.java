@@ -84,8 +84,8 @@ public class RollDice extends ListenerAdapter {
                 } else {
                     embed.addField("Result: ", "" + sum + " - " + (bonuses*-1) + " = " + (bonuses+sum), false);
                 }
-                embed.setColor(Color.CYAN);
 
+                embed.setColor(Color.CYAN);
                 event.getChannel().sendMessage(embed.build()).queue();
         }
     }

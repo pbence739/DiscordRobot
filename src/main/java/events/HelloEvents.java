@@ -11,7 +11,7 @@ public class HelloEvents extends ListenerAdapter {                              
         String name = event.getMember().getUser().getName();
         if(messageSent.equalsIgnoreCase("!ping")){                  // ha az üzenet egyenlő megadott értékkel belép az if-be
             if (!event.getMember().getUser().isBot()){                          // csak akkor működik ha az üzenet küldője NEM bot
-                event.getChannel().sendMessage("pong!").queue();      // kiírja az üzenetet
+                event.getChannel().sendMessage("pong!").queue();           // kiírja az üzenetet
             }
         }
     }
