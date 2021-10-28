@@ -16,9 +16,10 @@ public class ShadowrunRoller extends ListenerAdapter {
         String message = event.getMessage().getContentRaw();
         EmbedBuilder embed = new EmbedBuilder();
 
-        if (message.charAt(0) == '!'){
-            String[] messageArr = message.split(" ");
-            int dices = 0;
+        String[] messageArr = message.split(" ");
+
+        if (messageArr[0].equals("!sr")){
+            double dices = 0;
             int succes = 0;
             int fail = 0;
             String rolls = "";

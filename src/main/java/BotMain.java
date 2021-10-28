@@ -6,7 +6,7 @@ import net.dv8tion.jda.api.JDABuilder;
 public class BotMain {
 
     public static void main(String args[]) throws Exception{
-        JDA jda = JDABuilder.createDefault("TOKEN").build();
+        JDA jda = JDABuilder.createDefault("OTAyMDkzNDAyNTg4NDY3MjMx.YXZZ8w.QFKgmbeESv8GCAurH1SGiYc3eC0").build();
 
         jda.addEventListener(new Help());
         jda.addEventListener(new HelloEvents());

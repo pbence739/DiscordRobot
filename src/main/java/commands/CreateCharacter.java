@@ -22,22 +22,18 @@ public class CreateCharacter extends ListenerAdapter {
         if (message.equalsIgnoreCase("!create")){
             String[] attributes = new String[]{"Str","Dex","Con","Int","Wis","Cha"};
             int[] attributeScores = new int[6];
-            int[] rolls = new int[4];
 
             for (int j = 0; j < attributes.length; j++) {
-                for (int i = 0; i < rolls.length; i++) {
-                    rolls[i] = random.nextInt(6) + 1;
-                }
-
-                int maxRoll = rolls[0];
                 int rollsSum = 0;
-                for (int roll : rolls) {
-                    if (roll > maxRoll) {
-                        maxRoll = roll;
+                int minRoll = Integer.MAX_VALUE;
+                for (int i = 0; i < 4; i++) {
+                    int singleRoll = random.nextInt(6) + 1;
+                    if (singleRoll < minRoll){
+                        minRoll = singleRoll;
                     }
-                    rollsSum += roll;
+                    rollsSum += singleRoll;
                 }
-                attributeScores[j] = rollsSum - maxRoll;
+                attributeScores[j] = rollsSum - minRoll;
             }
 
             String results = "";
